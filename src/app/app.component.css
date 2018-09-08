@@ -44,7 +44,7 @@ a {
 
 .bold {
     font-weight: 700;
-    font-size: 1.1em;
+    font-size: 1.0em;
 }
 
 .sum {
@@ -58,4 +58,8 @@ a {
     border-color: #E0E0E0;
     border-width: 1px;
     box-shadow: 0 20px 30px 0 rgba(36,83,107,0.15);
+}
+
+.optional {
+    background-color: #fbfbfb;
 }
