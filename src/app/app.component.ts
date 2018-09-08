@@ -30,7 +30,7 @@ export class AppComponent {
   bill_mult: number;
   tax_total: number;
 
-  constructor( private subService: SubscriptionService ) {
+  constructor( public subService: SubscriptionService ) {
 
     this.support = this.subService.getSupportTypes;
     this.support_value = this.subService.getSupportValue();
