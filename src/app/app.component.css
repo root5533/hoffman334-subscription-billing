@@ -1,0 +1,61 @@
+.no-padding-side {
+    padding: 0;
+}
+
+.sub-text {
+    opacity: 0.5;
+}
+
+.plan-card {
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #E0E0E0;
+    border-width: 1px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    opacity: 0.5;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    opacity: 0.5;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    opacity: 0.5;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+a {
+    color: #30aabc;
+}
+
+.tax-amount {
+    font-size: 20px;
+}
+
+.footer {
+    height: 100px;
+}
+
+.bold {
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+.sum {
+    font-size: 18px;
+}
+
+.summary-card {
+    background-color: white;
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #E0E0E0;
+    border-width: 1px;
+    box-shadow: 0 20px 30px 0 rgba(36,83,107,0.15);
+}
