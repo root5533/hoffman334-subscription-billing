@@ -67,22 +67,19 @@
                   </div>
                   <div class="col-sm-6">
                     <div class="input-group">
-                      <select class="custom-select">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <select class="custom-select" [(ngModel)]="subService.guide_type" (ngModelChange)="updateValues()">
+                          <option *ngFor="let type of guide" [ngValue]="type">{{type.name}}</option>
+                        </select>
                     </div>
                     <p class="mt-2">
-                      <span class="sub-text">$19 per employee/month</span> <br>
+                        <span class="sub-text">${{guide_value}} per employee/month</span> <br>
                       <a href="#">Compare Plans</a>
                     </p>
                   </div>
 
                   <div class="col-sm-2">
                     <div class="form-group no-margin">
-                        <input type="number" class="form-control" placeholder="1">
+                        <input type="number" class="form-control" placeholder="1" [(ngModel)]="guide_count">
                     </div>
                     <p class="mt-2">
                       <span class="sub-text">Employees</span>
@@ -91,7 +88,7 @@
 
                   <div class="col-sm-4 pl-5">
                     <p>
-                      <span class="tax-amount">$250</span> <br>
+                        <span class="tax-amount">${{subService.guide_tax}}</span> <br>
                       <span class="sub-text">+ tax / year</span>
                     </p>
                   </div>
@@ -124,22 +121,19 @@
                   </div>
                   <div class="col-sm-6">
                     <div class="input-group">
-                      <select class="custom-select">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <select class="custom-select" [(ngModel)]="subService.chat_type" (ngModelChange)="updateValues()">
+                          <option *ngFor="let type of chat" [ngValue]="type">{{type.name}}</option>
+                        </select>
                     </div>
                     <p class="mt-2">
-                      <span class="sub-text">$19 per employee/month</span> <br>
+                      <span class="sub-text">${{chat_value}} per employee/month</span> <br>
                       <a href="#">Compare Plans</a>
                     </p>
                   </div>
 
                   <div class="col-sm-2">
                     <div class="form-group no-margin">
-                        <input type="number" class="form-control" placeholder="1">
+                        <input type="number" class="form-control" placeholder="1" [(ngModel)]="chat_count">
                     </div>
                     <p class="mt-2">
                       <span class="sub-text">Employees</span>
@@ -148,7 +142,7 @@
 
                   <div class="col-sm-4 pl-5">
                     <p>
-                      <span class="tax-amount">$250</span> <br>
+                      <span class="tax-amount">${{ subService.chat_tax }}</span> <br>
                       <span class="sub-text">+ tax / year</span>
                     </p>
                   </div>
@@ -164,22 +158,19 @@
                   </div>
                   <div class="col-sm-6">
                     <div class="input-group">
-                      <select class="custom-select">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                      </select>
+                        <select class="custom-select" [(ngModel)]="subService.talk_type" (ngModelChange)="updateValues()">
+                          <option *ngFor="let type of talk" [ngValue]="type">{{type.name}}</option>
+                        </select>
                     </div>
                     <p class="mt-2">
-                      <span class="sub-text">$19 per employee/month</span> <br>
+                      <span class="sub-text">${{talk_value}} per employee/month</span> <br>
                       <a href="#">Compare Plans</a>
                     </p>
                   </div>
 
                   <div class="col-sm-2">
                     <div class="form-group no-margin">
-                        <input type="number" class="form-control" placeholder="1">
+                        <input type="number" class="form-control" placeholder="1" [(ngModel)]="talk_count">
                     </div>
                     <p class="mt-2">
                       <span class="sub-text">Employees</span>
@@ -188,7 +179,7 @@
 
                   <div class="col-sm-4 pl-5">
                     <p>
-                      <span class="tax-amount">$250</span> <br>
+                      <span class="tax-amount">${{ subService.talk_tax }}</span> <br>
                       <span class="sub-text">+ tax / year</span>
                     </p>
                   </div>
@@ -210,9 +201,9 @@
                     <p>Billing Cycle</p>
                   </div>
                   <div class="col-sm-6">
-                    <select class="custom-select">
-                      <option selected>Month</option>
-                      <option value="1">Annual</option>
+                    <select class="custom-select" [(ngModel)]="billing_period" (ngModelChange)="updateValues()">
+                      <option value="month">Month</option>
+                      <option value="year">Annual</option>
                     </select>
                   </div>
                 </div>
@@ -230,46 +221,46 @@
 
                   <div class="col-sm-4">
                     <p>
-                      <span class="sum">{{ support_count * support_value }}</span>
+                      <span class="sum">${{ support_count * support_value * bill_mult }}</span>
                     </p>
                   </div>
 
                   <div class="col-sm-8 mt-3">
                     <p>
-                      <span class="bold">Guide Professional</span> <br>
-                      Employees : 1
+                      <span class="bold">Guide {{subService.guide_type.name}}</span> <br>
+                      Employees : {{guide_count}}
                     </p>
                   </div>
 
                   <div class="col-sm-4 mt-3">
                     <p>
-                      <span class="sum">$250</span>
+                      <span class="sum">${{ guide_count * guide_value * bill_mult }}</span>
                     </p>
                   </div>
 
                   <div class="col-sm-8 mt-3">
                     <p>
-                      <span class="bold">Chat Lite</span> <br>
-                      Employees : 1
+                      <span class="bold">Chat {{subService.chat_type.name}}</span> <br>
+                      Employees : {{chat_count}}
                     </p>
                   </div>
 
                   <div class="col-sm-4 mt-3">
                     <p>
-                      <span class="sum">$250</span>
+                      <span class="sum">${{ chat_count * chat_value * bill_mult }}</span>
                     </p>
                   </div>
 
                   <div class="col-sm-8 mt-3">
                     <p>
-                      <span class="bold">Talk Lite</span> <br>
-                      Employees : 1
+                      <span class="bold">Talk {{subService.talk_type.name}}</span> <br>
+                      Employees : {{talk_count}}
                     </p>
                   </div>
 
                   <div class="col-sm-4 mt-3">
                     <p>
-                      <span class="sum">$250</span>
+                      <span class="sum">${{ talk_count * talk_value * bill_mult }}</span>
                     </p>
                   </div>
 
@@ -283,13 +274,21 @@
                   <div class="col-sm-8 mt-3">
                     <p>
                       <span class="bold">Total</span> <br>
-                      Employees : 1
+                      <span class="sub-text">+ tax / year</span>
                     </p>
                   </div>
 
                   <div class="col-sm-4 mt-3">
                     <p>
-                      <span class="sum">$250</span>
+                      <span class="sum">$
+                        {{ 
+                          (support_count * support_value * bill_mult) +
+                          (guide_count * guide_value * bill_mult) + 
+                          (chat_count * chat_value * bill_mult) + 
+                          (talk_count * talk_value * bill_mult) + 
+                          tax_total
+                        }}
+                      </span>
                     </p>
                   </div>
                 </div>
