@@ -1,3 +1,79 @@
-<p>
-  change-value works!
-</p>
+<div class="row mt-5">
+
+  <div class="col-md-3">
+    <h4>Supply</h4>
+  </div>
+
+  <div class="col-md-9">
+    <table class="table table-borderless">
+      <tbody>
+        <tr *ngFor="let item of support_types">
+          <td> {{ item.name }} </td>
+          <td> <input type="number" required [value]="item.value" class="form-control" style="width: 100px;" #supply> </td>
+          <td> <button type="button" class="btn btn-secondary btn-sm" (click)="updateSupply(item.name, supply.value)">Update</button> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="row mt-5">
+
+  <div class="col-md-3">
+    <h4>Guide</h4>
+  </div>
+
+  <div class="col-md-9">
+    <table class="table table-borderless">
+      <tbody>
+        <tr *ngFor="let item of guide_types">
+          <td> {{ item.name }} </td>
+          <td> <input type="number" required [value]="item.value" class="form-control" style="width: 100px;" #guide> </td>
+          <td> <button type="button" class="btn btn-secondary btn-sm" (click)="updateGuide(item.name, guide.value)">Update</button> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="row mt-5">
+
+  <div class="col-md-3">
+    <h4>Chat</h4>
+  </div>
+
+  <div class="col-md-9">
+    <table class="table table-borderless">
+      <tbody>
+        <tr *ngFor="let item of chat_types">
+          <td> {{ item.name }} </td>
+          <td> <input type="number" required [value]="item.value" class="form-control" style="width: 100px;" #chat> </td>
+          <td> <button type="button" class="btn btn-secondary btn-sm" (click)="updateChat(item.name, chat.value)">Update</button> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="row mt-5">
+
+  <div class="col-md-3">
+    <h4>Talk</h4>
+  </div>
+
+  <div class="col-md-9">
+    <table class="table table-borderless">
+      <tbody>
+        <tr *ngFor="let item of talk_types">
+          <td> {{ item.name }} </td>
+          <td> <input type="number" required [value]="item.value" class="form-control" style="width: 100px;" #talk> </td>
+          <td> <button type="button" class="btn btn-secondary btn-sm" (click)="updateTalk(item.name, talk.value)">Update</button> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

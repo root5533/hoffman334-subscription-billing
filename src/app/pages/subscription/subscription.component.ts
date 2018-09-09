@@ -30,29 +30,7 @@ export class SubscriptionComponent implements OnInit {
   bill_mult: number;
   tax_total: number;
 
-  constructor( public subService: SubscriptionService ) {
-
-    this.support = this.subService.getSupportTypes;
-    this.support_value = this.subService.getSupportValue();
-    this.support_count = 0;
-
-    this.guide = this.subService.getGuideTypes;
-    this.guide_value = this.subService.getGuideValue();
-    this.guide_count = 0;
-
-    this.chat = this.subService.getChatTypes;
-    this.chat_value = this.subService.getChatValue();
-    this.chat_count = 0;
-
-    this.talk = this.subService.getTalkTypes;
-    this.talk_value = this.subService.getTalkValue();
-    this.talk_count = 0;
-
-    this.billing_period = 'month';
-    this.bill_mult = 1;
-    this.tax_total = this.subService.getTaxTotal() / 12;
-
-  }
+  constructor( public subService: SubscriptionService ) { }
 
   updateValues() {
     this.support_value = this.subService.getSupportValue();
@@ -72,6 +50,26 @@ export class SubscriptionComponent implements OnInit {
     }
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.support = this.subService.getSupportTypes;
+    this.support_value = this.subService.getSupportValue();
+    this.support_count = 0;
+
+    this.guide = this.subService.getGuideTypes;
+    this.guide_value = this.subService.getGuideValue();
+    this.guide_count = 0;
+
+    this.chat = this.subService.getChatTypes;
+    this.chat_value = this.subService.getChatValue();
+    this.chat_count = 0;
+
+    this.talk = this.subService.getTalkTypes;
+    this.talk_value = this.subService.getTalkValue();
+    this.talk_count = 0;
+
+    this.billing_period = 'month';
+    this.bill_mult = 1;
+    this.tax_total = this.subService.getTaxTotal() / 12;
+  }
 
 }

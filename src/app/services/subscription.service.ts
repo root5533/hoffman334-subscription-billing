@@ -115,4 +115,39 @@ export class SubscriptionService {
     return amount;
   }
 
+  updateSubValues(category: string, type: string, value: number): void {
+    if (category === 'supply') {
+      for ( let i = 0; i < this.support_types.length; i++) {
+        if (this.support_types[i].name === type) {
+          this.support_types[i].value = value;
+          break;
+        }
+      }
+    }
+    if (category === 'guide') {
+      for ( let i = 0; i < this.guide_types.length; i++) {
+        if (this.guide_types[i].name === type) {
+          this.guide_types[i].value = value;
+          break;
+        }
+      }
+    }
+    if (category === 'chat') {
+      for ( let i = 0; i < this.chat_types.length; i++) {
+        if (this.chat_types[i].name === type) {
+          this.chat_types[i].value = value;
+          break;
+        }
+      }
+    }
+    if (category === 'talk') {
+      for ( let i = 0; i < this.talk_types.length; i++) {
+        if (this.talk_types[i].name === type) {
+          this.talk_types[i].value = value;
+          break;
+        }
+      }
+    }
+  }
+
 }
