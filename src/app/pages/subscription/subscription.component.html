@@ -1,0 +1,332 @@
+<div class="row mt-5">
+
+  <div class="col-md-12">
+
+    <h3 class="title">{{title}}</h3>
+
+    <hr class="mt-5">
+
+    <div class="container-fluid no-padding-side mt-5">
+
+      <p class="text">
+        We introduced new Chat plans in August 2017. You are grandfathered on your current plan unless you switch to a new Chat plan.
+      </p>
+
+      <div class="container-fluid no-padding-side mt-5">
+
+        <div class="row">
+
+          <div class="col-md-8">
+
+              <div class="plan-card p-5">
+
+                <div class="row">
+                  
+                  <div class="col-sm-10">
+                    <h5>Expand your support strategy with The Suite. Four powerful products, one simple plan.</h5>
+                  </div>
+                  <div class="col-sm-2" style="text-align: right;">
+                    <ui-switch color="#30aabc"></ui-switch>
+                  </div>
+
+                </div>
+
+                <div class="row mt-3">
+                  <div class="col-sm-6">
+                    Includes : 
+                  </div>
+                  <div class="col-sm-6" style="text-align: right">
+                    <a href="#">Learn more</a>
+                  </div>
+                </div>
+
+              </div>
+
+              <h6 class="sub-text mt-4 mb-4" style="text-align: center;">OR</h6>              
+
+            <div class="plan-card p-5">
+
+              <div class="row">
+                <div class="col-sm-12 mb-3">
+                    <h4>Support</h4>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                    <select class="custom-select" [(ngModel)]="subService.support_type" (ngModelChange)="updateValues()">
+                      <option *ngFor="let type of support" [ngValue]="type">{{type.name}}</option>
+                    </select>
+                  </div>
+                  <p class="mt-2">
+                    <span class="sub-text">${{support_value}} per employee/month</span> <br>
+                    <a href="#">Compare Plans</a>
+                  </p>
+                </div>
+
+                <div class="col-sm-2">
+                  <div class="form-group no-margin">
+                      <input type="number" class="form-control" placeholder="1" [(ngModel)]="support_count">
+                  </div>
+                  <p class="mt-2">
+                    <span class="sub-text">Employees</span>
+                  </p>
+                </div>
+
+                <div class="col-sm-4 pl-5">
+                  <p>
+                    <span class="tax-amount">${{subService.support_tax}}</span> <br>
+                    <span class="sub-text">+ tax / year</span>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <h6 class="sub-text mt-4 mb-4">Managed with your Support plan</h6>
+
+            <div class="plan-card p-5">
+
+              <div class="row">
+                <div class="col-sm-12 mb-3">
+                    <h4>Guide</h4>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                      <select class="custom-select" [(ngModel)]="subService.guide_type" (ngModelChange)="updateValues()">
+                        <option *ngFor="let type of guide" [ngValue]="type">{{type.name}}</option>
+                      </select>
+                  </div>
+                  <p class="mt-2">
+                      <span class="sub-text">${{guide_value}} per employee/month</span> <br>
+                    <a href="#">Compare Plans</a>
+                  </p>
+                </div>
+
+                <div class="col-sm-2">
+                  <div class="form-group no-margin">
+                      <input type="number" class="form-control" placeholder="1" [(ngModel)]="guide_count">
+                  </div>
+                  <p class="mt-2">
+                    <span class="sub-text">Employees</span>
+                  </p>
+                </div>
+
+                <div class="col-sm-4 pl-5">
+                  <p>
+                      <span class="tax-amount">${{subService.guide_tax}}</span> <br>
+                    <span class="sub-text">+ tax / year</span>
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="plan-card optional p-5">
+              <div class="row">
+                <div class="col-sm-4">
+                  Optional add-ons
+                </div>
+                <div class="col-sm-8">
+                  <input type="checkbox">
+                  <span class="pl-3">Answer Bot </span>
+                  <p class="sub-text">
+                      Powered by machine learning, Answer Bot finds and automatically sends relevant knowledge base articles 
+                      to your customers, enabling faster resolutions. <a href="#">Learn more</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="plan-card p-5 mt-4">
+
+              <div class="row">
+                <div class="col-sm-12 mb-3">
+                    <h4>Chat</h4>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                      <select class="custom-select" [(ngModel)]="subService.chat_type" (ngModelChange)="updateValues()">
+                        <option *ngFor="let type of chat" [ngValue]="type">{{type.name}}</option>
+                      </select>
+                  </div>
+                  <p class="mt-2">
+                    <span class="sub-text">${{chat_value}} per employee/month</span> <br>
+                    <a href="#">Compare Plans</a>
+                  </p>
+                </div>
+
+                <div class="col-sm-2">
+                  <div class="form-group no-margin">
+                      <input type="number" class="form-control" placeholder="1" [(ngModel)]="chat_count">
+                  </div>
+                  <p class="mt-2">
+                    <span class="sub-text">Employees</span>
+                  </p>
+                </div>
+
+                <div class="col-sm-4 pl-5">
+                  <p>
+                    <span class="tax-amount">${{ subService.chat_tax }}</span> <br>
+                    <span class="sub-text">+ tax / year</span>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="plan-card p-5 mt-4">
+
+              <div class="row">
+                <div class="col-sm-12 mb-3">
+                    <h4>Talk</h4>
+                </div>
+                <div class="col-sm-6">
+                  <div class="input-group">
+                      <select class="custom-select" [(ngModel)]="subService.talk_type" (ngModelChange)="updateValues()">
+                        <option *ngFor="let type of talk" [ngValue]="type">{{type.name}}</option>
+                      </select>
+                  </div>
+                  <p class="mt-2">
+                    <span class="sub-text">${{talk_value}} per employee/month</span> <br>
+                    <a href="#">Compare Plans</a>
+                  </p>
+                </div>
+
+                <div class="col-sm-2">
+                  <div class="form-group no-margin">
+                      <input type="number" class="form-control" placeholder="1" [(ngModel)]="talk_count">
+                  </div>
+                  <p class="mt-2">
+                    <span class="sub-text">Employees</span>
+                  </p>
+                </div>
+
+                <div class="col-sm-4 pl-5">
+                  <p>
+                    <span class="tax-amount">${{ subService.talk_tax }}</span> <br>
+                    <span class="sub-text">+ tax / year</span>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          
+
+          <div class="col-md-4">
+            
+            <div class="summary-card p-5">
+
+              <h4>Summary</h4>
+
+              <div class="row mt-4">
+                <div class="col-sm-6">
+                  <p>Billing Cycle</p>
+                </div>
+                <div class="col-sm-6">
+                  <select class="custom-select" [(ngModel)]="billing_period" (ngModelChange)="updateValues()">
+                    <option value="month">Month</option>
+                    <option value="year">Annual</option>
+                  </select>
+                </div>
+              </div>
+
+              <hr>
+
+              <div class="row mt-5">
+
+                <div class="col-sm-8">
+                  <p>
+                    <span class="bold">Support {{subService.support_type.name}}</span> <br>
+                    Employees : {{support_count}}
+                  </p>
+                </div>
+
+                <div class="col-sm-4">
+                  <p>
+                    <span class="sum">${{ support_count * support_value * bill_mult }}</span>
+                  </p>
+                </div>
+
+                <div class="col-sm-8 mt-3">
+                  <p>
+                    <span class="bold">Guide {{subService.guide_type.name}}</span> <br>
+                    Employees : {{guide_count}}
+                  </p>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                  <p>
+                    <span class="sum">${{ guide_count * guide_value * bill_mult }}</span>
+                  </p>
+                </div>
+
+                <div class="col-sm-8 mt-3">
+                  <p>
+                    <span class="bold">Chat {{subService.chat_type.name}}</span> <br>
+                    Employees : {{chat_count}}
+                  </p>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                  <p>
+                    <span class="sum">${{ chat_count * chat_value * bill_mult }}</span>
+                  </p>
+                </div>
+
+                <div class="col-sm-8 mt-3">
+                  <p>
+                    <span class="bold">Talk {{subService.talk_type.name}}</span> <br>
+                    Employees : {{talk_count}}
+                  </p>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                  <p>
+                    <span class="sum">${{ talk_count * talk_value * bill_mult }}</span>
+                  </p>
+                </div>
+
+              </div>
+
+              <hr class="mt-5">
+
+              <div class="row">
+                <hr class="mt-5">
+
+                <div class="col-sm-8 mt-3">
+                  <p>
+                    <span class="bold">Total</span> <br>
+                    <span class="sub-text">+ tax / year</span>
+                  </p>
+                </div>
+
+                <div class="col-sm-4 mt-3">
+                  <p>
+                    <span class="sum">$
+                      {{ 
+                        (support_count * support_value * bill_mult) +
+                        (guide_count * guide_value * bill_mult) + 
+                        (chat_count * chat_value * bill_mult) + 
+                        (talk_count * talk_value * bill_mult) + 
+                        tax_total
+                      }}
+                    </span>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
