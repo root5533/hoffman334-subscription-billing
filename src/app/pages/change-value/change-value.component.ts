@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SubscriptionService } from '../../services/subscription.service';
 import { Plan } from '../../classes/Plan';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-change-value',
@@ -14,7 +15,7 @@ export class ChangeValueComponent implements OnInit {
   chat_types: Plan[];
   talk_types: Plan[];
 
-  constructor( public subService: SubscriptionService ) { }
+  constructor( public subService: SubscriptionService, public toastr: ToastrService ) { }
 
   ngOnInit() {
 
@@ -26,18 +27,22 @@ export class ChangeValueComponent implements OnInit {
   }
 
   updateSupply(item_name: string, event: any) {
+    this.toastr.success('New value assigned for ' + item_name, 'Updated Supply!');
     this.subService.updateSubValues('supply', item_name, event);
   }
 
   updateGuide(item_name: string, event: any) {
+    this.toastr.success('New value assigned for ' + item_name, 'Updated Guide!');
     this.subService.updateSubValues('guide', item_name, event);
   }
 
   updateChat(item_name: string, event: any) {
+    this.toastr.success('New value assigned for ' + item_name, 'Updated Chat!');
     this.subService.updateSubValues('chat', item_name, event);
   }
 
   updateTalk(item_name: string, event: any) {
+    this.toastr.success('New value assigned for ' + item_name, 'Updated Talk!');
     this.subService.updateSubValues('talk', item_name, event);
   }
 

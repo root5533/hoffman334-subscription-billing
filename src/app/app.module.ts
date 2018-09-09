@@ -8,6 +8,8 @@ import { UiSwitchModule } from 'ngx-toggle-switch';
 import { AppRoutingModule } from './/app-routing.module';
 import { ChangeValueComponent } from './pages/change-value/change-value.component';
 import { SubscriptionComponent } from './pages/subscription/subscription.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { SubscriptionComponent } from './pages/subscription/subscription.compone
     BrowserModule,
     FormsModule,
     UiSwitchModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [
     SubscriptionService
